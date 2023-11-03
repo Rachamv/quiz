@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz App</title>
+    <!-- Add your CSS link or styles here -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <!-- Your header content here -->
+        <h1>Welcome to the Quiz App</h1>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <!-- Your footer content here -->
+        <p>&copy; 2023 Quiz App</p>
+    </footer>
+
+    <!-- Add your JavaScript link or scripts here -->
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

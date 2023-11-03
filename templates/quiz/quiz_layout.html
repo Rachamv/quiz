@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <section>
+        <h2>Quiz</h2>
+        <form action="/submit_quiz" method="post">
+            {% for question in questions %}
+                <div class="question">
+                    <h3>{{ question.question }}</h3>
+                    <input type="radio" name="answer" value="{{ question.correct_answer }}"> {{ question.correct_answer }}<br>
+                    {% for incorrect_answer in question.incorrect_answers %}
+                        <input type="radio" name="answer" value="{{ incorrect_answer }}"> {{ incorrect_answer }}<br>
+                    {% endfor %}
+                </div>
+            {% endfor %}
+            <input type="submit" value="Submit">
+        </form>
+    </section>
+{% endblock %}
